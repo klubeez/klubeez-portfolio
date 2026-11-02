@@ -1,125 +1,103 @@
-## Note
-This repository is intentionally sanitized. It does not include private credentials, customer data, production secrets, or the complete private production codebase.
-
 # klubeez
 
-klubeez is a multi-tenant golf scoring and administration platform designed to support clubs, competitions, operational workflows, and scalable SaaS delivery.
+**Club management, with Prize Claims as the first operational module.**
 
-The Golf Scoring Application currently supports:
-- 
-- Full create account workflow
-- Google Places / Address Validation style address autocomplete integration for tenant/admin address entry
-- Cloudflare Turnstile checks on all login/auth forms
-- Round type, handicap and tee box decision making
-- Playing partner supported
-- Live score recording and total score calculation
-- Amount of time round is taking
-- Map of each hole
-- Uploading of round
-- Ability to view historical rounds
+klubeez brings club operations into one portal. Clubs see the module catalogue,
+open the modules they can use, and work within their own club's boundaries.
+The current focus is replacing an Access-based voucher workflow with
+browser-based creation, redemption, printing and reporting.
 
-Live rounds are then also able to be tracked by the club administrator from the admin dashboard that each club/tenant is provided with.
+This is a **public portfolio**, not application source or a runnable demo.
+The product remains **pre-launch**, with local and hosted Dev testing.
+Screenshots show real application screens using synthetic test records.
+No customer records, credentials or private deployment configuration are included.
 
-The Administrator Dashboard currently supports:
-- 
-- Platform Superuser and multi-tenant admin dashboards
-- Tenant onboarding workflow
-- Initial tenant admin setup
-- Initial course setup - multiple courses per tenant supported
-- Initial membership upload
-- Audit log
-- Active rounds including pace of play configuration
+## What Works Today
 
-It has been built using a local AI-assisted development setup using OpenAI Codex CLI in Ubuntu (WSL) within VS Code, supporting React/TypeScript, Supabase, GitHub, and Vercel-based SaaS delivery. 
+| Area                     | Capabilities                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Club Portal              | Shared sign-in, club-aware dashboard, module catalogue and direct access to enabled modules without another login                          |
+| Vouchers                 | Create and edit, automatic per-club numbering, member lookup or non-member recipients, CSV import and status/date/search filters           |
+| Redemption And Archiving | Individual or bulk redemption at club-selected businesses; cancellation and archiving retain records                                       |
+| Printing And Reports     | A4 two-per-sheet or A5 landscape vouchers, issuer/watermark settings, search-results reports, redemption reports and outstanding liability |
+| Prizes                   | Ordinary awards, winner imports, lookup and recorded collection, separate from numbered vouchers                                           |
+| Sponsors & Businesses    | Shared club business register with explicit selection of voucher redemption venues                                                         |
+| Administration           | Club/platform administrator controls for staff invitations, staff module access, voucher display and recorded activity                     |
+| Help                     | Searchable explanations of screens, fields and workflows, maintained alongside feature changes                                             |
 
-I have included a number of my process files in the docs folder - this will give you a feeling for the type of process I have evolved over time. Pairing this type of approach with deliberately small slice PR's has proven to be a good way to control the output and avoid hallucinations etc. 
+Staff accounts do not require club membership. Club/platform administrators
+have additional controls; ordinary staff cannot invite other staff. Access is
+enforced by backend authorization, not just hidden navigation.
 
-Current tracked size is:
--
-- 169,834 total lines across the whole repo however that total includes docs, user stories, review logs, and a very large archived bundle file, so it overstates the actual application code size.
-- 48,249 is the more honest number.
+Membership and golf-scoring capabilities exist in the broader codebase, but
+are not the current launch focus. A module shown as **Coming Soon** is not
+available to that club. Historical data preparation, production readiness and
+administrator handover remain separate launch work.
 
-  Useful breakdown:
-  - 32,072 lines under src/
-  - 12,885 lines under supabase/
-  - 48,249 lines across the main app/runtime set: src/ + supabase/ + scripts/ + tools/ + core config files
+## Product Screenshots
 
-Process Docs
--
-- my current start of session prompt
-- AGENTS.md is the orchestrator but there are a number of others dealing with workflow, security, architecture, patterns etc
-- OUR-PROCESS.md
-- PLATFORM-VISION.md
-- patterns.md
-- SECURITY-GUARDRAILS.md
-- FORM-STANDARDS.md
-- and there are quite a few more but that give you the general idea
+Captured **2 November 2026** from hosted Dev. The module images show a staff
+view, not administrator-only controls. [Screenshot provenance](images/README.md).
 
-## Purpose of this repository
-This is a public portfolio repository prepared for technical review. It provides a high-level view of the product, architecture, engineering decisions, user experience, and selected implementation samples without exposing private production details.
+### Club Dashboard
 
-The working repo at https://github.com/18birds/18Birds is private and I am happy to walk you through the repo one on one if you would like. I have attached a screenshot of the home page and it shows:
-- Releases 3
-- Deployments 500+
+One entry point for club modules and their availability.
 
-## My role
-Founder, Product Lead, Engineering Lead
+![Club Dashboard showing Prize Claims enabled and other catalogue modules marked Coming Soon](images/club-dashboard.png)
 
-My role in the development process is to act as the technical product and delivery coordinator: translating business needs into clear requirements, designing the solution approach, directing AI-assisted engineering workflows, reviewing implementation outputs, and maintaining alignment across architecture, security, and delivery quality.
+### Voucher Directory
 
-I have deliberately evolved the development process so that it is not just fast, but controlled. That has meant introducing stronger security thinking, auditability, and delivery guardrails, with clearer review points, validation steps, traceable decisions, and practical controls to reduce risk while maintaining speed and flexibility.
+Status tabs, search, date filters, selection and actions in one operational view.
 
-## What I owned
-- Product direction and solution design
-- Frontend architecture and UX iteration
-- Authentication and authorization approach
-- Multi-tenant architecture decisions
-- Supabase data model and access patterns
-- CI/CD and deployment workflow
-- AI-assisted engineering workflows for delivery acceleration
+![Voucher directory with synthetic recipients, amounts, status filters and report controls](images/voucher-directory.png)
 
-## Stack
-- React
-- TypeScript
-- Vite
-- Supabase
-- Vercel
-- GitHub
+### Voucher Reports
 
-## Key engineering themes
-- Multi-tenant SaaS architecture
-- Secure authentication and tenant isolation
-- Structured frontend design
-- Delivery discipline through CI/CD
-- Practical AI-assisted development and review workflows
+Printable report previews with relevant filters, voucher details and totals.
 
-## Repository contents
-- `docs/architecture-overview.md` — system overview and design decisions
-- `docs/product-summary.md` — product summary and business context
-- `images/` — screenshots and visual references
-- `samples/` — selected representative code samples
+![Search-results report preview showing five synthetic vouchers and a total of 250 dollars](images/voucher-reports.png)
 
-## Screenshots
-### Golf Scoring App - create account screen
-![App Create Account](images/app-create-account-small.png)
+### Searchable Help
 
-### Golf Scoring App - login screen
-![App Login](images/login-small.png)
+Workflow guidance is part of the product, not a separate training document.
 
-### Golf Scoring App - pre-round setup
-![App setup your round](images/setup-your-round-small.png)
+![Help search and linked topics for Vouchers, Prizes, Sponsors and Businesses, Prize Lookup, Import Winners, Staff and Activity Log](images/help.png)
 
-### Golf Scoring App - live scoring
-![Live scoring](images/live-score-tracking-small.png)
+## My Role
 
-### Active 18Birds Repo
-![Active 18Birds Repo](images/active-18birds-repo.png)
+**Founder, Product Lead And Engineering Lead**
 
-### Admin Login
-![Admin login page](images/admin-login-page.png)
+I translate club workflows into requirements and acceptance tests, direct
+AI-assisted implementation, review the resulting experience, and make delivery
+and release decisions. My responsibilities include product direction, UX,
+tenant boundaries, data modelling and the development-to-deployment process.
 
-### Admin Dashboard
-![Admin dashboard overview](images/admin-dashboard-overview.png)
+The approach is practical: small changes, explicit acceptance criteria,
+automated checks, relevant browser validation, and human testing before approved
+hosted rollouts. AI review findings are assessed against real supported workflows
+rather than treated as automatic instructions.
 
-### Active Rounds
-![Active rounds overview](images/active-rounds-overview.png)
+## Architecture And Stack
+
+- React, TypeScript and Vite for the portal and separately built Prize Claims frontend.
+- Supabase for shared authentication, database and backend access controls.
+- Vercel for hosted frontend delivery and portal/module routing.
+- GitHub for version control, pull requests and application CI.
+- Codex-assisted engineering with human-owned scope, acceptance and merges.
+
+The platform owns shared tenants, identities, businesses and database migrations.
+Prize Claims consumes those capabilities rather than duplicating them. Users
+enter through the portal; a separate frontend does not mean a separate account.
+
+## Explore The Portfolio
+
+- [Product Summary](docs/product-summary.md): business context and current scope.
+- [Architecture Overview](docs/architecture-overview.md): application boundaries and access model.
+- [Engineering Approach](docs/engineering-approach.md): current delivery principles.
+- [Documentation Index](docs/README.md): current overviews and historical process snapshots.
+- [Code Samples](samples/README.md): historical, sanitized extracts, not runnable modules or the current authentication implementation.
+
+The working application repositories are private. This repository contains only
+selected public documentation, images and illustrative samples. It has no
+application build or deployment pipeline; updating this portfolio does not
+deploy klubeez.

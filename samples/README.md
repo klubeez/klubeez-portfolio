@@ -1,13 +1,21 @@
 # Code Samples
 
+**Historical snapshots:** these extracts were published earlier in development.
+They are not the current Club Portal or Prize Claims implementation, and are
+not evidence that current application tests have passed. In particular, current
+portal authentication uses a session broker; do not implement authentication
+from these extracts. See the [current architecture overview](../docs/architecture-overview.md).
+
 This folder contains a small set of representative, sanitized code samples selected to demonstrate engineering approach, security thinking, accessibility awareness, and code structure rather than the full private production codebase.
 
 ## Included areas
+
 - `auth/` — authentication, session handling, and security-focused regression coverage
 - `data-access/` — data access and API interaction patterns
 - `ui/` — representative frontend component structure
 
 ## Included samples
+
 - `auth/auth.ts` — representative authentication and session-management logic showing validation, error handling, Supabase integration, token lifecycle handling, and user context hydration.
 - `auth/auth.security.test.ts` — security-focused regression coverage demonstrating friendly error handling, fail-closed authorization behavior, in-memory-only session handling, and captcha propagation.
 - `data-access/supabase.ts` — representative data-access layer showing frontend-safe Supabase configuration validation, runtime URL resolution, shared request helpers, and typed read/write patterns for core application data.
@@ -15,4 +23,5 @@ This folder contains a small set of representative, sanitized code samples selec
 - `ui/AdminToolbarFields.tsx` — representative reusable UI component sample showing typed React props, accessible hidden-label patterns, and consistent admin input/select abstractions.
 
 ## Note
+
 Supporting utilities and adjacent implementation files are intentionally omitted from this portfolio sample for brevity. The goal is to show representative engineering approach, security guardrails, accessibility awareness, component structure, and data-access patterns rather than provide a complete standalone module.
