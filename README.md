@@ -120,10 +120,6 @@ branch and inspects the change as data, never running it. kz refuses page code,
 links or layout; broken placeholders; low contrast or hidden content; approval
 piped from a script; releasing unfinished work; and Production by accident.
 
-Three defects were found and fixed before its first use: recovery after Ctrl+C
-mid-preview, a dependency update leaving its own setup stale, and a repeated
-check run leaving GitHub waiting on a result that had already passed.
-
 ## Architecture
 
 A modular monolith on proven managed services, with the database as the final
