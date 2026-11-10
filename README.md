@@ -1,103 +1,172 @@
+<p align="center"><img src="images/pipeline.svg" alt="klubeez delivery pipeline: ten stages from story to release" width="100%"></p>
+
 # klubeez
 
-**Club management, with Prize Claims as the first operational module.**
+**One calm, simple portal for club operations. Built the right way.**
 
-klubeez brings club operations into one portal. Clubs see the module catalogue,
-open the modules they can use, and work within their own club's boundaries.
-The current focus is replacing an Access-based voucher workflow with
-browser-based creation, redemption, printing and reporting.
+klubeez replaces paper vouchers, spreadsheets and disconnected legacy processes
+for club staff, starting with prize vouchers and prizes.
 
-This is a **public portfolio**, not application source or a runnable demo.
-The product remains **pre-launch**, with local and hosted Dev testing.
-Screenshots show real application screens using synthetic test records.
-No customer records, credentials or private deployment configuration are included.
+It saves hours every week, stops vouchers going missing, and keeps every record
+in one place. And every change is tested, reviewed and approved before it
+reaches a club.
 
-## What Works Today
+| 637 | 1,579 | 28 | 37 | 101 | 4 |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| pull requests, each reviewed and merged by a person | automated tests on every change | browser checks against a real database in CI | architecture decision records | database migrations, replayable from zero | required checks no one can bypass, administrators included |
 
-| Area                     | Capabilities                                                                                                                               |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Club Portal              | Shared sign-in, club-aware dashboard, module catalogue and direct access to enabled modules without another login                          |
-| Vouchers                 | Create and edit, automatic per-club numbering, member lookup or non-member recipients, CSV import and status/date/search filters           |
-| Redemption And Archiving | Individual or bulk redemption at club-selected businesses; cancellation and archiving retain records                                       |
-| Printing And Reports     | A4 two-per-sheet or A5 landscape vouchers, issuer/watermark settings, search-results reports, redemption reports and outstanding liability |
-| Prizes                   | Ordinary awards, winner imports, lookup and recorded collection, separate from numbered vouchers                                           |
-| Sponsors & Businesses    | Shared club business register with explicit selection of voucher redemption venues                                                         |
-| Administration           | Club/platform administrator controls for staff invitations, staff module access, voucher display and recorded activity                     |
-| Help                     | Searchable explanations of screens, fields and workflows, maintained alongside feature changes                                             |
+<sub>Figures as of 11 November 2026.</sub>
 
-Staff accounts do not require club membership. Club/platform administrators
-have additional controls; ordinary staff cannot invite other staff. Access is
-enforced by backend authorization, not just hidden navigation.
+## The Saturday Jobs, Done In One Screen
 
-Membership and golf-scoring capabilities exist in the broader codebase, but
-are not the current launch focus. A module shown as **Coming Soon** is not
-available to that club. Historical data preparation, production readiness and
-administrator handover remain separate launch work.
+After a competition, a staff member hands out prizes and vouchers. During the
+week, local businesses hand vouchers back to be paid. klubeez makes both quick,
+checked and impossible to half-finish.
 
-## Product Screenshots
+- **A whole competition in one screen.** Enter the competition once, then one
+  row per winner. Dates, numbers and expiry fill themselves in. One save
+  creates them all, or none.
+- **Every voucher checked as you type.** Already redeemed, cancelled, entered
+  twice or not usable at that business: each problem is named in plain words
+  before anything is saved.
+- **Find a person.** One search shows everything waiting for a member to redeem
+  or collect, with the action right there.
+- **Printing, reports and liability.** Branded A4 or A5 vouchers with the club's
+  watermark, redemption reports by business, and the club's outstanding
+  liability at a glance.
+- **Help that ships with every change.** Every feature arrives with its Help
+  written for club staff. It is a rule of the pipeline, checked in review.
 
-Captured **2 November 2026** from hosted Dev. The module images show a staff
-view, not administrator-only controls. [Screenshot provenance](images/README.md).
+Designed to best practice: clear hierarchy, generous text and targets,
+consistent layouts, plain language, accessible colour contrast checked
+automatically, keyboard-friendly data entry and one obvious next step on every
+screen.
 
-### Club Dashboard
+### Product Screens
 
-One entry point for club modules and their availability.
+Screens use synthetic records only. [Screenshot provenance](images/README.md).
 
-![Club Dashboard showing Prize Claims enabled and other catalogue modules marked Coming Soon](images/club-dashboard.png)
+| | |
+| --- | --- |
+| ![Dashboard with the everyday tasks for vouchers and prizes, and what needs attention](images/dashboard.png) | ![Create vouchers: shared competition details and one row per winner](images/create-vouchers.png) |
+| **Dashboard.** The everyday jobs first, and what needs attention. | **Create vouchers.** A whole competition's winners in one save. |
+| ![Redeem vouchers by number, with each voucher checked and one problem named](images/redeem-by-number.png) | ![A voucher's details: status, person and actions together](images/voucher-details.png) |
+| **Redeem vouchers.** Every number checked before anything is saved. | **Voucher details.** Status, person and the right actions at a glance. |
+| ![Prizes waiting to be collected](images/prizes.png) | ![Find a person showing what is waiting for them](images/find-a-person.png) |
+| **Prizes.** Golf balls and other prizes waiting to be collected. | **Find a person.** Everything waiting for one member, in one search. |
 
-### Voucher Directory
+### Modules And Pricing
 
-Status tabs, search, date filters, selection and actions in one operational view.
+**Prize Claims** is the first module. **Raffles, Members, Events and Sponsors**
+are coming.
 
-![Voucher directory with synthetic recipients, amounts, status filters and report controls](images/voucher-directory.png)
+**$25 per week per module**, ex GST · up to 5 staff logins · cancel any time.
 
-### Voucher Reports
+## How A Change Reaches A Club
 
-Printable report previews with relevant filters, voucher details and totals.
+Codex writes the code. Claude reviews it, read-only. Machines check everything
+that can be checked. A person merges. Nothing reaches a club without passing
+every one of these stages, and each stage leaves evidence behind.
 
-![Search-results report preview showing five synthetic vouchers and a total of 250 dollars](images/voucher-reports.png)
+| Stage | What happens |
+| --- | --- |
+| **1. Story and expected outcome** | Every task starts as a user story with acceptance criteria and a written expected outcome, so "done" is defined before any code exists. |
+| **2. Plan review** | Claude Code reviews the plan against the real source. It can only read: no shell, no edits, no secrets, proven with a canary before its first review. |
+| **3. Build** | Codex implements the smallest agreed increment on a branch, with focused tests that assert the accepted contract, not just whatever the code happens to do. |
+| **4. Quality gates** | Formatting, lint, type checks, 1,579 tests, production build, security configuration check, dependency audit and native type checks. |
+| **5. Browser smoke** | 28 Playwright checks run the key club workflows against a throwaway Postgres built from the migrations, in CI, on every change. |
+| **6. Visual parity** | Screens are captured at 1280, 1440 and 1920 wide with synthetic data and compared against the approved design pack. |
+| **7. Candidate review** | Claude reviews the actual diff and test evidence. At most three rounds, then one check-only pass. Findings are fixed, deferred with a backlog link, or rejected with reasons. |
+| **8. Required checks** | Four required checks, branches up to date, rules enforced for administrators too. Conversations must be resolved before a merge. |
+| **9. Human merge** | No agent can merge or push to the main branches. The product owner tests locally against a written test guide, then merges. |
+| **10. Release** | Released to Test on synthetic data with post-deploy checks. Production is a separate, named approval. Approval to write code is never approval to deploy it. |
 
-### Searchable Help
+**Required on every pull request**, from GitHub Actions only, so nothing else can
+post a fake pass: `quality-gates` · `browser-smoke` · `quick-scope` · `quick-visual`.
 
-Workflow guidance is part of the product, not a separate training document.
+**The Reality Gate.** Before any finding is acted on, the reviewer names the
+actor, the exact sequence, the visible outcome and the boundary at risk.
+Findings that need customers or traffic that don't exist are rejected. Real
+security, privacy and data risks never are.
 
-![Help search and linked topics for Vouchers, Prizes, Sponsors and Businesses, Prize Lookup, Import Winners, Staff and Activity Log](images/help.png)
+**Severity with teeth.** P0 stop · P1 prompt fix · P2 may block · P3 minor. A
+label is not proof. A failed acceptance criterion blocks, whatever its severity.
+Protected risk can only be accepted by the product owner, in writing.
 
-## My Role
+## The Quick-Change Channel
 
-**Founder, Product Lead And Engineering Lead**
+When a club asks for a wording tweak on a Tuesday, it can be live on Test in
+minutes. `kz` makes wording, colour and component-style changes from one
+terminal command. Each one is previewed, checked, merged under the owner's
+account and deployed to Test, with no AI session involved and no shortcut
+through the gates.
 
-I translate club workflows into requirements and acceptance tests, direct
-AI-assisted implementation, review the resulting experience, and make delivery
-and release decisions. My responsibilities include product direction, UX,
-tenant boundaries, data modelling and the development-to-deployment process.
+```text
+$ kz word dashboard_create_vouchers_detail "Type in several winners at once"
+  ✓ words file only · placeholders intact · no markup
+  ✓ local checks: format, lint, types, 1,579 tests
+  ✓ before/after pictures: 1280 · 1440 · 1920 · narrow
+  Send to Test? (y/n) y
+  trusted scope check: lane = words · attested
+  required checks: 4 of 4 passed
+  ✓ merged by the owner · deployed to Test
+$ kz undo
+  ✓ reverted through the same lane
+```
 
-The approach is practical: small changes, explicit acceptance criteria,
-automated checks, relevant browser validation, and human testing before approved
-hosted rollouts. AI review findings are assessed against real supported workflows
-rather than treated as automatic instructions.
+The scope check is the real control. It runs only trusted code from the main
+branch and inspects the change as data, never running it. kz refuses page code,
+links or layout; broken placeholders; low contrast or hidden content; approval
+piped from a script; releasing unfinished work; and Production by accident.
 
-## Architecture And Stack
+Three defects were found and fixed before its first use: recovery after Ctrl+C
+mid-preview, a dependency update leaving its own setup stale, and a repeated
+check run leaving GitHub waiting on a result that had already passed.
 
-- React, TypeScript and Vite for the portal and separately built Prize Claims frontend.
-- Supabase for shared authentication, database and backend access controls.
-- Vercel for hosted frontend delivery and portal/module routing.
-- GitHub for version control, pull requests and application CI.
-- Codex-assisted engineering with human-owned scope, acceptance and merges.
+## Architecture
 
-The platform owns shared tenants, identities, businesses and database migrations.
-Prize Claims consumes those capabilities rather than duplicating them. Users
-enter through the portal; a separate frontend does not mean a separate account.
+A modular monolith on proven managed services, with the database as the final
+authority on who can see and change what.
 
-## Explore The Portfolio
+- **One web application.** React 19, TypeScript and Vite, with Prize Claims as
+  the first module and shared packages for people, businesses, UI and the module
+  contract. All wording lives in one words file; all styling in design tokens.
+- **Server-owned sessions.** Sessions are managed by the server through HttpOnly
+  cookies. No bearer tokens are ever kept in browser storage.
+- **Postgres with row-level security.** Supabase, RLS on every table and
+  RPC-authoritative writes. Permissions are enforced in the database, not just
+  by hiding buttons.
+- **Tenant isolation is tested, not assumed.** Data features ship with tests
+  that try to read another club's records and must fail.
+- **All or nothing.** Creating eighteen vouchers or redeeming twenty is one
+  database transaction, with double-click protection and a server-side recheck
+  of every row.
+- **One owner per fact.** A data-ownership map says which module owns people,
+  staff and businesses, so nothing gets copied and drifts.
+- **Decisions written down.** 37 architecture decision records explain why
+  things are the way they are.
+- **Second use extracts.** The first time something is built, it lives in its
+  module. The second time, it moves to a shared package rather than being copied.
 
-- [Product Summary](docs/product-summary.md): business context and current scope.
-- [Architecture Overview](docs/architecture-overview.md): application boundaries and access model.
-- [Engineering Approach](docs/engineering-approach.md): current delivery principles.
-- [Documentation Index](docs/README.md): current overviews and historical process snapshots.
-- [Code Samples](samples/README.md): historical, sanitized extracts, not runnable modules or the current authentication implementation.
+## Best Practice, Built In
 
-The working application repositories are private. This repository contains only
-selected public documentation, images and illustrative samples. It has no
-application build or deployment pipeline; updating this portfolio does not
-deploy klubeez.
+- **Separate environments.** Local, Test and Production are fully separate.
+  Testing only ever uses synthetic data, never a club's records.
+- **Rebuilt the same way, every time.** Every environment is built from scratch
+  from version-controlled database migrations, so Production is never a one-off.
+- **Real workflows tested on every change.** Key club workflows run in a real
+  browser against a real, throwaway database before any change can merge.
+- **Recorded testing.** Every feature staff use has a written test guide, and
+  every run is saved with who tested it, on which build, with what result.
+
+## Explore
+
+- [Product summary](docs/product-summary.md)
+- [Architecture overview](docs/architecture-overview.md)
+- [Engineering approach](docs/engineering-approach.md)
+- [Documentation index](docs/README.md), including historical process snapshots
+- [Code samples](samples/README.md): historical, sanitized extracts
+
+The application source is private. This public repository contains no customer
+records, credentials or private configuration, and updating it does not deploy
+klubeez. Product examples use synthetic data.

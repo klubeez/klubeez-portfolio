@@ -1,3 +1,5 @@
+Internal paths redacted, 11 November 2026.
+
 # Our Process
 
 This file captures the exact working process for making changes and PRs in this repo.
@@ -66,7 +68,7 @@ git reset --hard origin/feature-dev
 ```
 
 30. Revalidate locally on merged `feature-dev`.
-31. At pause/end of session, write a session summary, update `session-summaries/LATEST.md`, then run `/home/pete/projects/18Birds/scripts/dr-backup-home.sh`.
+31. At pause/end of session, write a session summary, update `session-summaries/LATEST.md`, then run `[private path]`.
 
 ## Remodel Point Of View
 

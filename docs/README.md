@@ -1,33 +1,27 @@
 # Documentation
 
-## Current Overviews
+## Current
 
-- [Product Summary](product-summary.md)
-- [Architecture Overview](architecture-overview.md)
-- [Engineering Approach](engineering-approach.md)
+- [Product summary](product-summary.md): what klubeez does for clubs.
+- [Architecture overview](architecture-overview.md): the application, sessions,
+  data, permissions and environments.
+- [Engineering approach](engineering-approach.md): the ten-stage delivery
+  pipeline, bounded review and the quick-change channel.
 
-These describe the portfolio as of 2 November 2026. They are not deployment
-instructions or a claim that the product has launched.
+## Historical Process Snapshots
 
-## Historical Process Samples
+The documents in [archive/](archive/) were copied into this portfolio earlier
+in development. They are kept to show how the process evolved. They are **not**
+current descriptions or runbooks, they use older branding, and they refer to
+private files that are not included here. Don't run any command they contain.
 
-The following documents were copied into this portfolio earlier in development.
-They are retained as examples of how the process evolved, **not as current
-product descriptions or operational runbooks**. They retain older 18Birds
-branding and references to private application files not included here.
-Statements about mandatory commands, branch protection and review loops reflect
-those snapshots, not verified settings or executable procedures for this repository.
-
-- [Agent Protocol](AGENTS.md)
-- [Delivery Process](OUR-PROCESS.md)
-- [Quality Gates](QUALITY-GATES.md)
-- [Platform Vision](PLATFORM-VISION.md)
-- [Patterns](patterns.md)
-- [Security Guardrails](SECURITY-GUARDRAILS.md)
-- [Form Standards](FORM-STANDARDS.md)
-- [Session Prompt](start-session-prompt.md)
-
-Use the current Engineering Approach above for today's public process summary.
-Do not run historical reset or deployment commands against a working environment.
+- [Agent protocol](archive/AGENTS.md)
+- [Delivery process](archive/OUR-PROCESS.md)
+- [Quality gates](archive/QUALITY-GATES.md)
+- [Platform vision](archive/PLATFORM-VISION.md)
+- [Patterns](archive/patterns.md)
+- [Security guardrails](archive/SECURITY-GUARDRAILS.md)
+- [Form standards](archive/FORM-STANDARDS.md)
+- [Session prompt](archive/start-session-prompt.md)
 
 [Back To Portfolio](../README.md)

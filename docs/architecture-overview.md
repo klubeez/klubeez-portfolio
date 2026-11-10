@@ -1,38 +1,53 @@
 # Architecture Overview
 
-## Product Boundaries
+A modular monolith on proven managed services, with the database as the final
+authority on who can see and change what.
 
-klubeez has a React/TypeScript/Vite Club Portal and a separately built Prize
-Claims frontend, presented through the portal's module route. Users sign in
-once and navigate into their authorized module without a second login.
+## One Web Application
 
-The platform repository owns shared Supabase migrations, tenants, identities,
-memberships, the business register and backend authorization. The Prize Claims
-frontend consumes those shared services rather than maintaining duplicate
-identity or sponsor systems.
+- **React 19, TypeScript and Vite.** One club portal application. Each product
+  area is a module (Prize Claims is the first) built against a shared module
+  contract.
+- **Shared packages** for people, businesses and UI. The first time something is
+  built it lives in its module; the second time, it moves to a shared package
+  rather than being copied.
+- **One words file and design tokens.** All on-screen wording lives in one file
+  and all styling in named tokens, so wording and look can change safely
+  without touching application logic.
 
-## Access Model
+## Sessions
 
-- Club administrators and staff operate within their assigned club.
-- Platform Admin selects a club for cross-tenant administration.
-- Staff invitations, voucher display and Activity Log require administrator access.
-- Prize Claims staff need no membership roster record or playing account.
-- Backend authorization and database policies enforce access; UI visibility is
-  not the security boundary.
+Sessions are owned by the server. The browser holds a short-lived access token
+in memory only, with refresh handled through an HttpOnly cookie. No bearer
+tokens are ever kept in browser storage.
 
-The portal's session broker supports module access with a memory-only access
-token and an HttpOnly refresh cookie. Direct module-origin visits return to the
-portal. Historical authentication samples in this portfolio are not the current
-portal implementation.
+## Data And Permissions
 
-## Delivery Boundaries
+- **Postgres with row-level security**, hosted on Supabase. Every table has
+  row-level security, and writes go through database functions that enforce the
+  rules.
+- **Permissions live in the database.** Hiding a button is a convenience, never
+  the security boundary.
+- **Tenant isolation is tested.** Data features ship with tests that try to read
+  another club's records and must fail.
+- **All or nothing.** Batch work, such as creating eighteen vouchers or redeeming
+  twenty, is one database transaction, with double-click protection and a
+  server-side recheck of every row.
+- **One owner per fact.** A data-ownership map says which module owns people,
+  staff and businesses, so nothing gets copied and drifts.
 
-Vercel hosts the web frontends; Supabase provides shared data and authentication.
-Local work and hosted Dev testing precede separately approved hosted promotion.
-Production preparation is not the same as a declared launch.
+## Environments
 
-The application repositories contain CI and release procedures. This public
-portfolio is documentation and illustrative samples only: it contains no
-deployable application, complete dependency graph or working CI workflow.
+| Environment | Data | How it is built |
+| --- | --- | --- |
+| Local | Synthetic | Rebuilt with one command from the migrations |
+| Test | Synthetic only | Rebuilt from scratch from version-controlled migrations; released with post-deploy checks |
+| Production | Club records | An isolated project, built the same way and released only by separate approval |
 
-[Back To Portfolio](../README.md)
+## Decisions
+
+37 architecture decision records explain why things are the way they are, from
+web storage and session policy to the throwaway database used by the browser
+checks in CI.
+
+[Back To Documentation](README.md)
