@@ -74,7 +74,7 @@ every one of these stages, and each stage leaves evidence behind.
 | **1. Story and expected outcome** | Every task starts as a user story with acceptance criteria and a written expected outcome, so "done" is defined before any code exists. |
 | **2. Plan review** | Claude Code reviews the plan against the real source. It can only read: no shell, no edits, no secrets, proven with a canary before its first review. |
 | **3. Build** | Codex implements the smallest agreed increment on a branch, with focused tests that assert the accepted contract, not just whatever the code happens to do. |
-| **4. Quality gates** | Formatting, lint, type checks, 1,579 tests, production build, security configuration check, dependency audit and native type checks. |
+| **4. Quality gates** | Formatting, lint, type checks, 1,579 tests, production build, security configuration check, dependency audit. |
 | **5. Browser smoke** | 28 Playwright checks run the key club workflows against a throwaway Postgres built from the migrations, in CI, on every change. |
 | **6. Visual parity** | Screens are captured at 1280, 1440 and 1920 wide with synthetic data and compared against the approved design pack. |
 | **7. Candidate review** | Claude reviews the actual diff and test evidence. At most three rounds, then one check-only pass. Findings are fixed, deferred with a backlog link, or rejected with reasons. |
