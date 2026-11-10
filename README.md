@@ -11,6 +11,7 @@ It saves hours every week, stops vouchers going missing, and keeps every record
 in one place. And every change is tested, reviewed and approved before it
 reaches a club.
 
+## The story so far ...
 | 637 | 1,579 | 28 | 37 | 101 | 4 |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | pull requests, each reviewed and merged by a person | automated tests on every change | browser checks against a real database in CI | architecture decision records | database migrations, replayable from zero | required checks no one can bypass, administrators included |
