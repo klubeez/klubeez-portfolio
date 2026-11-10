@@ -1,37 +1,41 @@
 # Product Summary
 
-klubeez is a modular club-management platform. The current focus is a shared
-Club Portal and Prize Claims, replacing a manual/Access-based voucher workflow.
-It remains pre-launch software, tested locally and in hosted Dev.
+## The Problem
 
-## Club Workflow
+Clubs run a surprising amount of weekly operational work on paper,
+spreadsheets and disconnected legacy software. Prize vouchers are a good
+example: winners are written down after each competition, vouchers are filled
+out one at a time, local businesses hand them back to be paid, and nobody can
+say with confidence what the club still owes.
 
-1. The platform provisions a club, its administrator and enabled modules.
-2. The club administrator signs in to the portal and opens Prize Claims.
-3. Administrators invite staff; these accounts do not require roster membership.
-4. Authorized users create vouchers or import awards, print vouchers and record
-   collection or redemption through the appropriate workflow.
-5. Reports show selected/search results, redemptions and outstanding voucher
-   liability. Administrators can inspect supported recorded activity.
+## What klubeez Does
 
-## Important Distinctions
+klubeez is one calm, simple portal for club operations. Club staff sign in once
+and see the modules their club uses. The first module, **Prize Claims**, covers
+the whole voucher and prize workflow:
 
-- An ordinary prize and a numbered voucher have separate collection/redemption workflows.
-- A sponsor is not automatically a redemption venue; the club selects its active venues.
-- Archiving retires unredeemed vouchers, retains records and excludes them from liability.
-- Club membership, a staff account and a playing account are different concepts.
-- The visible module catalogue is broader than the modules enabled for a club.
+| Area | What staff can do |
+| --- | --- |
+| Create | Enter a competition once, then one row per winner. Vouchers are numbered automatically; dates and expiry fill themselves in. One save creates them all, or none. |
+| Redeem | Type or paste the numbers of vouchers a business handed back. Each one is checked as it is typed, and the batch is redeemed against that business in one save. |
+| Find a person | One search shows everything waiting for a member to redeem or collect. |
+| Prizes | Golf balls and other prizes are recorded in one screen and marked collected when handed out. |
+| Print and report | Branded A4 or A5 vouchers with the club's watermark, redemption reports by business and outstanding liability. |
+| Import | A club's existing vouchers and prizes can be brought across from a spreadsheet when it first joins. Every file is all or nothing. |
+| Help | Help for club staff is written alongside every feature. |
 
-## Current Direction
+## Who It Is For
 
-The immediate priority is completing launch preparation for the voucher
-workflow, including historical data reconciliation and administrator handover.
-Members, course/scoring and competitions belong to the broader product direction;
-their presence in the catalogue does not imply general availability.
+Club staff at the desk, and the committee members who need a clear record of
+what is owed. The interface follows best practice: clear hierarchy, generous
+text and targets, consistent layouts, plain language, accessible colour
+contrast and one obvious next step on every screen.
 
-## My Contribution
+## Modules And Pricing
 
-I own product direction, workflow design, implementation coordination,
-acceptance testing and release decisions, supported by AI-assisted engineering.
+Prize Claims is the first module. Raffles, Members, Events and Sponsors are
+coming, each building on the same shared people, businesses and branding.
 
-[Back To Portfolio](../README.md)
+**$25 per week per module**, ex GST · up to 5 staff logins · cancel any time.
+
+[Back To Documentation](README.md)

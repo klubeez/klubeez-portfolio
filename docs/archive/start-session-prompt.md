@@ -1,3 +1,5 @@
+Internal paths redacted, 11 November 2026.
+
 Read these in order:
 1. AGENTS.md
 2. OUR-PROCESS.md
@@ -5,7 +7,7 @@ Read these in order:
 4. PLATFORM-VISION.md
 5. session-summaries/LATEST.md and the referenced latest session summary
 6. If relevant to the planned work, also read any directly applicable source-of-truth docs referenced by AGENTS.md
-7. Review the latest audit log at /home/pete/projects/18Birds/audit-output and advise on any red findings
+7. Review the latest audit log at [private path] and advise on any red findings
 
 Then provide a structured startup brief with these sections:
 

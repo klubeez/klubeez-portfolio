@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="klubeez delivery pipeline: ten stages from story to release">
+<style>
+.bg{fill:#0d2a21}
+.h{font:900 44px Figtree,'Segoe UI',system-ui,sans-serif;fill:#e8f1ec;letter-spacing:-1px}
+.h tspan{fill:#7fe0b0}
+.sub{font:500 18px Figtree,'Segoe UI',system-ui,sans-serif;fill:#9fb8ad}
+.s rect{fill:#123629;stroke:#2c4a3e;stroke-width:1.5}
+.s circle{fill:#2c4a3e}
+.n{font:700 12px 'JetBrains Mono',Consolas,monospace;fill:#9fb8ad}
+.t{font:800 17px Figtree,'Segoe UI',system-ui,sans-serif;fill:#e8f1ec}
+.s{animation:lit 12s infinite}
+.s rect{animation:litr 12s infinite;animation-delay:inherit}
+.s circle{animation:litc 12s infinite;animation-delay:inherit}
+@keyframes litr{0%{stroke:#2c4a3e}4%,85%{stroke:#7fe0b0}100%{stroke:#2c4a3e}}
+@keyframes litc{0%{fill:#2c4a3e}4%,85%{fill:#7fe0b0}100%{fill:#2c4a3e}}
+@keyframes lit{0%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.s rect{animation:none;stroke:#7fe0b0}.s circle{animation:none;fill:#7fe0b0}}
+</style>
+<rect class="bg" width="1200" height="320" rx="20"/>
+<text x="34.0" y="78" class="h">klubeez<tspan> · how a change reaches a club</tspan></text>
+<text x="34.0" y="112" class="sub">Every change passes all ten stages. Agents build and review; only a person merges.</text>
+<g class="s" style="animation-delay:0.00s"><rect x="34.0" y="150" width="212" height="64" rx="12"/><circle cx="228.0" cy="168" r="6"/><text x="50.0" y="176" class="n">01</text><text x="50.0" y="198" class="t">Story</text></g><g class="s" style="animation-delay:0.96s"><rect x="264.0" y="150" width="212" height="64" rx="12"/><circle cx="458.0" cy="168" r="6"/><text x="280.0" y="176" class="n">02</text><text x="280.0" y="198" class="t">Plan review</text></g><g class="s" style="animation-delay:1.92s"><rect x="494.0" y="150" width="212" height="64" rx="12"/><circle cx="688.0" cy="168" r="6"/><text x="510.0" y="176" class="n">03</text><text x="510.0" y="198" class="t">Build</text></g><g class="s" style="animation-delay:2.88s"><rect x="724.0" y="150" width="212" height="64" rx="12"/><circle cx="918.0" cy="168" r="6"/><text x="740.0" y="176" class="n">04</text><text x="740.0" y="198" class="t">Quality gates</text></g><g class="s" style="animation-delay:3.84s"><rect x="954.0" y="150" width="212" height="64" rx="12"/><circle cx="1148.0" cy="168" r="6"/><text x="970.0" y="176" class="n">05</text><text x="970.0" y="198" class="t">Browser smoke</text></g><g class="s" style="animation-delay:4.80s"><rect x="34.0" y="230" width="212" height="64" rx="12"/><circle cx="228.0" cy="248" r="6"/><text x="50.0" y="256" class="n">06</text><text x="50.0" y="278" class="t">Visual parity</text></g><g class="s" style="animation-delay:5.76s"><rect x="264.0" y="230" width="212" height="64" rx="12"/><circle cx="458.0" cy="248" r="6"/><text x="280.0" y="256" class="n">07</text><text x="280.0" y="278" class="t">Code review</text></g><g class="s" style="animation-delay:6.72s"><rect x="494.0" y="230" width="212" height="64" rx="12"/><circle cx="688.0" cy="248" r="6"/><text x="510.0" y="256" class="n">08</text><text x="510.0" y="278" class="t">Required checks</text></g><g class="s" style="animation-delay:7.68s"><rect x="724.0" y="230" width="212" height="64" rx="12"/><circle cx="918.0" cy="248" r="6"/><text x="740.0" y="256" class="n">09</text><text x="740.0" y="278" class="t">Human merge</text></g><g class="s" style="animation-delay:8.64s"><rect x="954.0" y="230" width="212" height="64" rx="12"/><circle cx="1148.0" cy="248" r="6"/><text x="970.0" y="256" class="n">10</text><text x="970.0" y="278" class="t">Release</text></g>
+</svg>
