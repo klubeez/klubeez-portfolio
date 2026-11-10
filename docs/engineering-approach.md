@@ -14,8 +14,7 @@ every stage below, and each stage leaves evidence behind.
 3. **Build.** Codex implements the smallest agreed increment on a branch, with
    focused tests that assert the accepted contract.
 4. **Quality gates.** Formatting, lint, type checks, the full automated test
-   suite, production build, security configuration check, dependency audit and
-   native type checks.
+   suite, production build, security configuration check, dependency audit.
 5. **Browser smoke.** Playwright runs the key club workflows against a throwaway
    Postgres built from the migrations, in CI, on every change.
 6. **Visual parity.** Screens are captured at 1280, 1440 and 1920 wide with
