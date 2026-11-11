@@ -58,10 +58,10 @@ Screens use synthetic records only. [Screenshot provenance](images/README.md).
 
 ### Modules And Pricing
 
-**Prize Claims** is the first module. **Raffles, Members, Events and Sponsors**
+**Prize Claims** is the first module. **Raffles, Events and Sponsors**
 are coming.
 
-**$25 per week per module**, ex GST · up to 5 staff logins · cancel any time.
+**$25 per week per module**, ex GST · up to 5 staff logins · cancel at any time.
 
 ## How A Change Reaches A Club
 

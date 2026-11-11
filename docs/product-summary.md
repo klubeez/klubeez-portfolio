@@ -33,9 +33,9 @@ contrast and one obvious next step on every screen.
 
 ## Modules And Pricing
 
-Prize Claims is the first module. Raffles, Members, Events and Sponsors are
+Prize Claims is the first module. Raffles, Events and Sponsors are
 coming, each building on the same shared people, businesses and branding.
 
-**$25 per week per module**, ex GST · up to 5 staff logins · cancel any time.
+**$25 per week per module**, ex GST · up to 5 staff logins · cancel at any time.
 
 [Back To Documentation](README.md)
